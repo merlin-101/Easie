@@ -24,6 +24,7 @@ data_base.connect(err => {
 	console.log('Connectado com a base de dados');
 });
 
+//as routes do API, filtrações, buscas etc
 connections.get('/api/data', (req, res) => {
 
 	const sql_query = 'SELECT * FROM your_table';
