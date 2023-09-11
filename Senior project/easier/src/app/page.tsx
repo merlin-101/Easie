@@ -1,21 +1,27 @@
-import Image from "next/image";
 import styles from "./page.module.css";
+import Logo from "./Components/Logo";
+import { Button, Link, Typography } from "@mui/material";
 
 export default function Home() {
   return (
     <main className={styles.main}>
-      <div className={styles.center}>
-        <p color="red">Eas</p>
-        <Image
-          src="/noun-surfing-5255625.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={180}
-          priority
-        />
-        <p>er</p>
-      </div>
-      <div className={styles.center}>Easier: Making websurfing simple</div>
+      <Logo />
+      <Typography variant="h4" color={"#f5b841"}>
+        Easier: Making websurfing simpler
+      </Typography>
+      <Link href="/dashboard">
+        <Button
+          variant="contained"
+          sx={{
+            marginY: 2,
+          }}
+        >
+          Login
+        </Button>
+      </Link>
+      <Typography color={"#eaf2ff"}>
+        or <Link href="/dashboard">Register</Link>
+      </Typography>
     </main>
   );
 }
