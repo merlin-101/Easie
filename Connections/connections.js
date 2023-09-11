@@ -39,6 +39,6 @@ connections.get('/api/data', (req, res) => {
 });
 
 connections.listen( port, () => {
-	console.log('O servidor está a correr na port ${port}');
+	console.log(`O servidor está a correr na port ${port}`);
 });
 
