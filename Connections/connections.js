@@ -25,6 +25,7 @@ data_base.connect((err) => {
 
 //as routes do API, filtrações, buscas etc
 connections.get('/api/data', (req, res) => {
+  console.log(req)
   const sql_query = 'SELECT * FROM Utilizadores'
   console.log('Ex: SELECT * FROM Utilizadores')
   data_base.query(sql_query, (err, results) => {
@@ -37,9 +38,30 @@ connections.get('/api/data', (req, res) => {
   })
 })
 
+async function onCreate(event) {
+  let fu = event.body
+  const reader = fu
+  /*let result = ''
+  const decoder = new TextDecoder()
+
+  while (true) {
+    const { done, value } = await reader.read()
+    if (done) break
+    result += decoder.decode(value)
+  }*/
+
+  console.log(reader)
+}
+
 connections.post('/api/data', (req, res) => {
   //console.log(req)
+  //onCreate(req)
+  if (req.body == undefined) {
+    console.log('vazio')
+  }
+  //console.log(req)
   console.log(req.body)
+
   return res.json(JSON.stringify({ pedido: 'Sucesso', request: req.body }))
 })
 
