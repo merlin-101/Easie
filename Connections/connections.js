@@ -25,8 +25,6 @@ data_base.connect((err) => {
 
 //as routes do API, filtrações, buscas etc
 connections.get('/api/data', (req, res) => {
-<<<<<<< HEAD
-
 	const sql_query = 'SELECT * FROM your_table';
 	data_base.query(sql_query, (err, results) => {
 		if (err) {
@@ -42,8 +40,7 @@ connections.listen( port, () => {
 	console.log(`O servidor está a correr na port ${port}`);
 });
 
-=======
-  const sql_query = 'SELECT * FROM Utilizadores'
+const sql_query = 'SELECT * FROM Utilizadores'
   console.log('Ex: SELECT * FROM Utilizadores')
   data_base.query(sql_query, (err, results) => {
     if (err) {
@@ -52,11 +49,9 @@ connections.listen( port, () => {
     } else {
       res.json(results)
     }
-  })
-})
+  });
 
 connections.post('/api/data', (req, res) => {
-  //console.log(req)
   console.log(req.body)
   return res.json(JSON.stringify({ pedido: 'Sucesso', request: req.body }))
 })
@@ -64,4 +59,3 @@ connections.post('/api/data', (req, res) => {
 connections.listen(port, () => {
   console.log(`O servidor está a correr na port ${port}`)
 })
->>>>>>> 7606618bc8df083de97be77a052a7fe76640dda1
