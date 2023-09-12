@@ -7,18 +7,19 @@ import Box from "@mui/material/Box";
 import Link from "next/link";
 import styles from "../page.module.css";
 import crypto from "crypto";
-import { NextResponse } from "next/server";
 
 export default function Home() {
-  async function onCreate(formData: FormData) {
-    const user = await {
+  async function onCreate(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const formData = new FormData(event.currentTarget);
+    const user = {
       email: formData.get("email") as string,
       password: crypto
         .createHash("md5")
         .update(formData.get("password") as string)
         .digest("hex"),
     };
-    console.log(user);
+
     const myRequest = new Request("http://127.0.0.1:5000/api/data", {
       method: "POST",
       headers: {
@@ -26,6 +27,14 @@ export default function Home() {
       },
       body: JSON.stringify(user),
     });
+
+    const res = await fetch(myRequest);
+    console.log(await res.json());
+    console.log(await res.body);
+
+    //let tempBody;
+    //myRequest.body?.pipeTo(tempBody);
+
     /*const res = await fetch("http://127.0.0.1:5000/api/data", {
       method: "POST",
       headers: {
@@ -39,10 +48,12 @@ export default function Home() {
           .digest("hex") as string,
       }),
     });*/
-    const res = await fetch(myRequest);
+    //const res = await fetch(myRequest);
     //JSON.stringify(await user)
-    let test = await NextResponse.json(res.json());
-    console.log(test);
+    //console.log(await res.json());
+
+    //let test = await NextResponse.json(res.json());
+    //console.log(test);
     //console.log(await myRequest);
   }
   return (
@@ -55,7 +66,7 @@ export default function Home() {
         </div>
       </Box>
       <div>
-        <form action={onCreate} className={styles.main}>
+        <form onSubmit={onCreate} className={styles.main}>
           <TextField
             id="outlined-basic"
             label="EMAIL"

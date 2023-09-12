@@ -25,6 +25,7 @@ data_base.connect((err) => {
 
 //as routes do API, filtrações, buscas etc
 connections.get('/api/data', (req, res) => {
+<<<<<<< HEAD
 	const sql_query = 'SELECT * FROM your_table';
 	data_base.query(sql_query, (err, results) => {
 		if (err) {
@@ -41,6 +42,10 @@ connections.listen( port, () => {
 });
 
 const sql_query = 'SELECT * FROM Utilizadores'
+=======
+  console.log(req)
+  const sql_query = 'SELECT * FROM Utilizadores'
+>>>>>>> f9714be31b738a358e5fd7e65cf9e22feeb0701b
   console.log('Ex: SELECT * FROM Utilizadores')
   data_base.query(sql_query, (err, results) => {
     if (err) {
@@ -51,8 +56,33 @@ const sql_query = 'SELECT * FROM Utilizadores'
     }
   });
 
+async function onCreate(event) {
+  let fu = event.body
+  const reader = fu
+  /*let result = ''
+  const decoder = new TextDecoder()
+
+  while (true) {
+    const { done, value } = await reader.read()
+    if (done) break
+    result += decoder.decode(value)
+  }*/
+
+  console.log(reader)
+}
+
 connections.post('/api/data', (req, res) => {
+<<<<<<< HEAD
+=======
+  //console.log(req)
+  //onCreate(req)
+  if (req.body == undefined) {
+    console.log('vazio')
+  }
+  //console.log(req)
+>>>>>>> f9714be31b738a358e5fd7e65cf9e22feeb0701b
   console.log(req.body)
+
   return res.json(JSON.stringify({ pedido: 'Sucesso', request: req.body }))
 })
 
