@@ -25,8 +25,27 @@ data_base.connect((err) => {
 
 //as routes do API, filtrações, buscas etc
 connections.get('/api/data', (req, res) => {
+<<<<<<< HEAD
+	const sql_query = 'SELECT * FROM your_table';
+	data_base.query(sql_query, (err, results) => {
+		if (err) {
+			console.error('Falha na query da base de dados:', err);
+			res.status(500).json({ error: 'Erro na base de dados' });
+		} else {
+			res.json(results);
+		}
+	});
+});
+
+connections.listen( port, () => {
+	console.log(`O servidor está a correr na port ${port}`);
+});
+
+const sql_query = 'SELECT * FROM Utilizadores'
+=======
   console.log(req)
   const sql_query = 'SELECT * FROM Utilizadores'
+>>>>>>> f9714be31b738a358e5fd7e65cf9e22feeb0701b
   console.log('Ex: SELECT * FROM Utilizadores')
   data_base.query(sql_query, (err, results) => {
     if (err) {
@@ -35,8 +54,7 @@ connections.get('/api/data', (req, res) => {
     } else {
       res.json(results)
     }
-  })
-})
+  });
 
 async function onCreate(event) {
   let fu = event.body
@@ -54,12 +72,15 @@ async function onCreate(event) {
 }
 
 connections.post('/api/data', (req, res) => {
+<<<<<<< HEAD
+=======
   //console.log(req)
   //onCreate(req)
   if (req.body == undefined) {
     console.log('vazio')
   }
   //console.log(req)
+>>>>>>> f9714be31b738a358e5fd7e65cf9e22feeb0701b
   console.log(req.body)
 
   return res.json(JSON.stringify({ pedido: 'Sucesso', request: req.body }))
