@@ -68,3 +68,61 @@ connections.post('/api/data', (req, res) => {
 connections.listen(port, () => {
   console.log(`O servidor está a correr na port ${port}`)
 })
+
+connections.get('/api/cartoes', (req, res) => {
+  res.json(cartoes)
+})
+
+
+const cartoes = [
+  {
+    CardID: 1,
+    Titulo: "Facebook",
+    Descricao: "Facebook's page",
+    tipo: "Social Media",
+    Ligacao: "https://www.facebook.com",
+    UserID: 1,
+    Notif: false,
+    timer: "12-09-2023 16:43",
+  },
+  {
+    CardID: 2,
+    Titulo: "Youtube",
+    Descricao: "Youtube's page",
+    tipo: "Social Media",
+    Ligacao: "https://www.youtube.com",
+    UserID: 1,
+    Notif: false,
+    timer: "12-09-2023 16:43",
+  },
+  {
+    CardID: 3,
+    Titulo: "CNN",
+    Descricao: "CNN's page",
+    tipo: "News",
+    Ligacao: "https://www.cnn.com",
+    UserID: 1,
+    Notif: false,
+    timer: "12-09-2023 16:43",
+  },
+  {
+    CardID: 4,
+    Titulo: "Family Dinner",
+    Descricao: "Today at 20:00",
+    tipo: "",
+    Ligacao: "",
+    UserID: 1,
+    Notif: true,
+    timer: "12-09-2023 16:43",
+  },
+  {
+    CardID: 5,
+    Titulo: "Reminder",
+    Descricao: "Just a reminder for dinner",
+    tipo: "",
+    Ligacao: "",
+    UserID: 1,
+    Notif: true,
+    timer: "12-09-2023 19:17",
+  },
+];
