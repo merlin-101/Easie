@@ -84,10 +84,13 @@ export default function Home() {
             type="password"
             name="password"
             required={true}
+            color="secondary"
           />
-          <Button type="submit" variant="contained">
-            LOGIN
-          </Button>
+          <Link href={"/dashboard"}>
+            <Button type="submit" variant="contained">
+              LOGIN
+            </Button>
+          </Link>
         </form>
       </div>
     </>

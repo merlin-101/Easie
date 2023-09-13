@@ -48,9 +48,11 @@ export default function Home() {
             name="password"
             required={true}
           />
-          <Button type="submit" variant="contained">
-            REGISTER
-          </Button>
+          <Link href={"/dashboard"}>
+            <Button type="submit" variant="contained">
+              REGISTER
+            </Button>
+          </Link>
         </form>
       </div>
     </>

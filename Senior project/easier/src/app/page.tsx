@@ -7,9 +7,9 @@ export default function Home() {
     <main className={styles.main}>
       <Logo />
       <Typography variant="h4" color={"#f5b841"}>
-        Easier: Making websurfing simpler
+        Easier: Making web surfing simpler
       </Typography>
-      <Link href="/dashboard">
+      <Link href="/login">
         <Button
           variant="contained"
           sx={{
@@ -20,7 +20,10 @@ export default function Home() {
         </Button>
       </Link>
       <Typography color={"#eaf2ff"}>
-        or <Link href="/dashboard">Register</Link>
+        or{" "}
+        <Link href="/register" color={"#f5b841"}>
+          Register
+        </Link>
       </Typography>
     </main>
   );
