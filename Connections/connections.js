@@ -25,7 +25,6 @@ data_base.connect((err) => {
 
 //as routes do API, filtrações, buscas etc
 connections.get('/api/data', (req, res) => {
-<<<<<<< HEAD
 	const sql_query = 'SELECT * FROM your_table';
 	data_base.query(sql_query, (err, results) => {
 		if (err) {
@@ -42,10 +41,6 @@ connections.listen( port, () => {
 });
 
 const sql_query = 'SELECT * FROM Utilizadores'
-=======
-  console.log(req)
-  const sql_query = 'SELECT * FROM Utilizadores'
->>>>>>> f9714be31b738a358e5fd7e65cf9e22feeb0701b
   console.log('Ex: SELECT * FROM Utilizadores')
   data_base.query(sql_query, (err, results) => {
     if (err) {
