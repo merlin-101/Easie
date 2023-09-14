@@ -67,15 +67,6 @@ async function onCreate(event) {
 }
 
 connections.post('/api/data', (req, res) => {
-<<<<<<< HEAD
-=======
-  //console.log(req)
-  //onCreate(req)
-  if (req.body == undefined) {
-    console.log('vazio')
-  }
-  //console.log(req)
->>>>>>> f9714be31b738a358e5fd7e65cf9e22feeb0701b
   console.log(req.body)
 
   return res.json(JSON.stringify({ pedido: 'Sucesso', request: req.body }))

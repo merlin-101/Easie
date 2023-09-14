@@ -6,6 +6,13 @@
   padding: 6rem;
   min-height: 100vh;
 }
+.main2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem;
+}
 
 .description {
   display: inherit;
@@ -107,6 +114,10 @@
 .logo {
   position: relative;
   color: #f5b841;
+}
+
+.logo2 {
+  margin-top: 4rem;
 }
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
