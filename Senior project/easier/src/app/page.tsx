@@ -2,6 +2,7 @@ import styles from "./page.module.css";
 import Logo from "./Components/Logo";
 import { Button, Link, Typography } from "@mui/material";
 
+//Componete onde é apresentado o logo e os links de registar/login
 export default function Home() {
   return (
     <main className={styles.main}>

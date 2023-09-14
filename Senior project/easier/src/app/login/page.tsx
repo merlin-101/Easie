@@ -14,6 +14,7 @@ import Link from "next/link";
 import styles from "../page.module.css";
 import crypto from "crypto";
 
+//declarar cor secundaria
 declare module "@mui/material/styles" {
   interface Theme {
     status: {
@@ -37,8 +38,10 @@ const theme = createTheme({
 });
 
 export default function Home() {
+  //Função onSubmit
   async function onCreate(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    //tratamento do formData
     const formData = new FormData(event.currentTarget);
     const user = {
       email: formData.get("email") as string,
@@ -87,7 +90,7 @@ export default function Home() {
   return (
     <>
       <Box>
-        <div className="logo logo2">
+        <div className="logoTop">
           <Link href="/">
             <Logo />
           </Link>

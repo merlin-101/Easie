@@ -7,6 +7,7 @@ import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import Link from "next/link";
 
+//Simulação de dados usado um array de objetos
 const cartoes = [
   {
     CardID: 1,
@@ -40,6 +41,7 @@ const cartoes = [
   },
 ];
 
+//Simulação de dados usado um array de objetos
 const notifs = [
   {
     CardID: 4,
@@ -63,6 +65,7 @@ const notifs = [
   },
 ];
 
+//TSX com cartões dinamicamente gerados através dos arrays
 export default function Home() {
   return (
     <>
@@ -141,6 +144,8 @@ export default function Home() {
     </>
   );
 }
+
+//Versão base dos cartões
 /*
 const bull = (
   <Box

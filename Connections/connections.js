@@ -23,9 +23,11 @@ data_base.connect((err) => {
   console.log('Connectado com a base de dados')
 })
 
+
+
 //as routes do API, filtrações, buscas etc
 connections.get('/api/data', (req, res) => {
-	const sql_query = 'SELECT * FROM your_table';
+	const sql_query = 'SELECT * FROM Utilizadores';
 	data_base.query(sql_query, (err, results) => {
 		if (err) {
 			console.error('Falha na query da base de dados:', err);
@@ -36,20 +38,9 @@ connections.get('/api/data', (req, res) => {
 	});
 });
 
-connections.listen( port, () => {
-	console.log(`O servidor está a correr na port ${port}`);
-});
 
-const sql_query = 'SELECT * FROM Utilizadores'
-  console.log('Ex: SELECT * FROM Utilizadores')
-  data_base.query(sql_query, (err, results) => {
-    if (err) {
-      console.error('Falha na query da base de dados:', err)
-      res.status(500).json({ error: 'Erro na base de dados' })
-    } else {
-      res.json(results)
-    }
-  });
+
+
 
 async function onCreate(event) {
   let fu = event.body
@@ -72,9 +63,7 @@ connections.post('/api/data', (req, res) => {
   return res.json(JSON.stringify({ pedido: 'Sucesso', request: req.body }))
 })
 
-connections.listen(port, () => {
-  console.log(`O servidor está a correr na port ${port}`)
-})
+
 
 connections.get('/api/cartoes', (req, res) => {
   res.json(cartoes)
@@ -133,3 +122,8 @@ const cartoes = [
     timer: "12-09-2023 19:17",
   },
 ];
+
+
+connections.listen( port, () => {
+	console.log(`O servidor está a correr na port ${port}`);
+});
